@@ -1,26 +1,50 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <main class="app">
+    <header class="header">
+      <h1>Weather App</h1>
+    </header>
+    <div class="search">
+      <input
+        type="text"
+        v-model.trim="store.city"
+        @keydown.enter="store.getCity"
+      />
+      <button @click="store.getCity">Get</button>
+    </div>
+    <div class="cityList">
+      <city-card v-for="city in store.cities" :key="city.id" :city="city" />
+    </div>
+  </main>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import { useStore } from "./stores/store";
+import CityCard from "./components/CityCard.vue";
 
 export default {
-  name: "App",
-  components: {
-    HelloWorld,
+  components: { CityCard },
+
+  data() {
+    return {
+      store: useStore(),
+    };
+  },
+
+  mounted() {
+    this.store.fromStorage();
+    this.store.startUpdateInfo();
+  },
+
+  beforeUnmount() {
+    this.store.stopUpdateInfo();
   },
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.app {
+  .cityList {
+    display: flex;
+  }
 }
 </style>
