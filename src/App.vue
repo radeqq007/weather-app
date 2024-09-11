@@ -1,16 +1,6 @@
 <template>
   <main class="app">
-    <header class="header">
-      <h1>Weather App</h1>
-    </header>
-    <div class="search">
-      <input
-        type="text"
-        v-model.trim="store.city"
-        @keydown.enter="store.getCity"
-      />
-      <button @click="store.getCity">Get</button>
-    </div>
+    <main-header-block />
     <div class="cityList">
       <city-card v-for="city in store.cities" :key="city.id" :city="city" />
     </div>
@@ -20,14 +10,22 @@
 <script>
 import { useStore } from "./stores/store";
 import CityCard from "./components/CityCard.vue";
+import MainHeaderBlock from "./components/MainHeaderBlock.vue";
 
 export default {
-  components: { CityCard },
+  name: "App",
+  components: { CityCard, MainHeaderBlock },
 
   data() {
     return {
       store: useStore(),
     };
+  },
+
+  methods: {
+    randomColor() {
+      return "bg" + Math.floor(Math.random() * 9 + 1);
+    },
   },
 
   mounted() {
@@ -42,9 +40,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app {
-  .cityList {
-    display: flex;
-  }
+.cityList {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 </style>

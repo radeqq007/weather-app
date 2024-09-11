@@ -9,8 +9,6 @@ export const useStore = defineStore("store", {
     cities: [],
   }),
 
-  getters: {},
-
   actions: {
     async getData(city) {
       try {
@@ -104,6 +102,7 @@ export const useStore = defineStore("store", {
         "light rain": "rain",
         "moderate rain": "rain",
         "heavy rain": "heavyRain",
+        "heavy intensity rain": "heavyRain",
         thunderstorm: "thunderstorm",
         snow: "snow",
         mist: "mist",
