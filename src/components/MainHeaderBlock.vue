@@ -69,4 +69,19 @@ export default {
     }
   }
 }
+
+@media (max-width: 768px) {
+  .header {
+    .search {
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      .searchInp {
+        width: 80%;
+      }
+    }
+  }
+}
 </style>

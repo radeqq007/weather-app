@@ -9,14 +9,14 @@
     />
     <div class="desc">{{ weatherDescription }}</div>
     <div class="tempBlock">
-      <div class="temp">
+      <div class="minTemp">
         <img src="../assets/ui/min.png" alt="hot" width="30px" height="30px" />
-        <div>{{ minTemp }}</div>
+        <div>{{ minTemp }}°C</div>
       </div>
-      <div class="currentTemp">{{ currentTemp }}</div>
-      <div class="temp">
+      <div class="currentTemp">{{ currentTemp }}°C</div>
+      <div class="maxTemp">
         <img src="../assets/ui/max.png" alt="cold" width="30px" height="30px" />
-        <div>{{ maxTemp }}</div>
+        <div>{{ maxTemp }}°C</div>
       </div>
     </div>
     <button class="detailsBtn" @click="showDetails(city)">
@@ -132,7 +132,7 @@ export default {
 .cityCard {
   position: relative;
   text-align: center;
-  width: 200px;
+  width: 210px;
   height: 200px;
   margin: 10px;
   padding: 10px;
@@ -140,20 +140,23 @@ export default {
 
   .cityName {
     font-size: 24px;
+    z-index: 100;
   }
 
   .tempBlock {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 5px;
     padding: 0;
     margin: 0;
     line-height: 40px;
 
-    .temp {
+    .minTemp,
+    .maxTemp {
       display: flex;
       align-items: center;
+      font-size: 20px;
     }
 
     .currentTemp {
@@ -161,6 +164,9 @@ export default {
     }
   }
 
+  .desc {
+    font-size: 20px;
+  }
   .detailsBtn {
     margin: 5px;
     background: none;
@@ -253,5 +259,63 @@ export default {
 
 .bg9 {
   background: linear-gradient(45deg, #1ab440, #20a696);
+}
+
+@media (max-width: 768px) {
+  .cityCard {
+    position: relative;
+    width: 100%;
+
+    .cityName {
+      position: relative;
+      font-size: 40px;
+    }
+
+    .icon {
+      position: absolute;
+      top: 40px;
+      left: 10px;
+      width: 150px;
+    }
+
+    .tempBlock {
+      .minTemp {
+        position: absolute;
+        top: 120px;
+        right: 100px;
+        font-size: 26px;
+      }
+
+      .currentTemp {
+        position: absolute;
+        top: 70px;
+        left: 180px;
+      }
+
+      .maxTemp {
+        top: 120px;
+        right: 20px;
+        position: absolute;
+        font-size: 26px;
+      }
+    }
+
+    .desc {
+      position: absolute;
+      top: 166px;
+      left: 10px;
+      font-size: 26px;
+    }
+    .removeBtn {
+      z-index: 100;
+    }
+
+    .detailsBtn {
+      position: absolute;
+      top: 180px;
+      right: 20px;
+      font-size: 20px;
+    }
+  }
 }
 </style>

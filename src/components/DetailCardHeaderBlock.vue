@@ -244,4 +244,41 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(26px);
 }
+
+@media (max-width: 768px) {
+  .header {
+    display: relative;
+    width: 100vw;
+
+    .topBar {
+      .tempBlock {
+        position: relative;
+        flex-direction: column;
+        left: -100px;
+
+        .tempLabel {
+          display: none;
+        }
+      }
+
+      .timeToggle {
+        position: absolute;
+        top: 60px;
+        right: 39px;
+      }
+
+      .tempToggle {
+        position: absolute;
+        top: 130px;
+        right: 40px;
+      }
+
+      .removeBtn {
+        position: absolute;
+        top: 16px;
+        right: 30px;
+      }
+    }
+  }
+}
 </style>

@@ -81,4 +81,19 @@ export default {
 .active {
   background: linear-gradient(45deg, #4fd9ff, #0093e2);
 }
+
+@media (max-width: 768px) {
+  .daysBlock {
+    width: 100vw;
+    font-size: 20px;
+
+    .btnWeekday {
+      margin-top: 10px;
+      width: 50px;
+      .weekday {
+        display: none;
+      }
+    }
+  }
+}
 </style>

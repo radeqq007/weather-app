@@ -130,8 +130,10 @@ export default {
 <style lang="scss" scoped>
 .detailCard {
   position: absolute;
+  height: 100vh;
   inset: 0;
   z-index: 100;
+  overflow: hidden; /* Prevent scrolling */
 
   .wrapper {
     height: 100%;
@@ -140,14 +142,38 @@ export default {
     align-items: center;
     background-color: rgba(10, 10, 10, 0.5);
     backdrop-filter: blur(5px);
+    overflow: hidden; /* Prevent scrolling */
 
     .card {
       position: relative;
-      inset: 0;
+      top: 30px;
       width: 1000px;
+      height: 100vh;
       min-height: 750px;
       border-radius: 30px;
       backdrop-filter: brightness(7);
+      overflow: hidden; /* Prevent scrolling */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .detailCard {
+    width: 100%;
+    z-index: 1000;
+
+    .wrapper {
+      width: 100%;
+
+      z-index: 1000;
+
+      .card {
+        position: absolute;
+        inset: 0;
+        width: 100vw;
+        border-radius: 0px;
+        z-index: 1000;
+      }
     }
   }
 }

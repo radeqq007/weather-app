@@ -3,12 +3,12 @@
     <table class="tableInfo">
       <thead>
         <tr>
-          <th>Time</th>
-          <th>Weather</th>
-          <th>Main</th>
-          <th>Temperature</th>
-          <th>Pressure</th>
-          <th>Humidity</th>
+          <th class="time">Time</th>
+          <th class="weather">Weather</th>
+          <th class="main">Main</th>
+          <th class="temperature">Temperature</th>
+          <th class="pressure">Pressure</th>
+          <th class="humidity">Humidity</th>
         </tr>
       </thead>
       <tbody>
@@ -18,7 +18,7 @@
           </td>
           <td class="weather">
             <img
-              class=""
+              class="icon"
               :src="store.weatherIcon(day.weather[0].description)"
               alt="logo"
               width="50px"
@@ -119,6 +119,42 @@ export default {
   .humidity {
     width: 100px;
     font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tableInfo {
+    width: 90vw;
+    height: 100%;
+    text-align: center;
+    scrollbar-width: 0px;
+
+    thead {
+      color: rgb(245, 245, 60);
+      font-size: 20px;
+    }
+
+    .time {
+      font-size: 20px;
+    }
+
+    .main {
+      font-size: 20px;
+    }
+
+    .temperature {
+      font-size: 20px;
+    }
+
+    .pressure {
+      display: none;
+      font-size: 20px;
+    }
+
+    .humidity {
+      display: none;
+      font-size: 20px;
+    }
   }
 }
 </style>

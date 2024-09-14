@@ -40,12 +40,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.app {
+  overflow-y: auto;
+  height: 100vh;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  scrollbar-width: none;
+}
 .cityList {
   display: flex;
   justify-content: center;
-  width: 70%;
+  width: 80%;
   margin: 20px auto;
   flex-wrap: wrap;
   gap: 10px;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  scrollbar-width: none;
+}
+@media (max-width: 768px) {
+  .cityList {
+    width: 100%;
+  }
 }
 </style>
