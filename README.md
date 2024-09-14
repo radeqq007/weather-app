@@ -1,24 +1,20 @@
-# weather
+# Weather Dashboard
 
-## Project setup
-```
-npm install
-```
+## Description: This Vue.js weather dashboard project allows users to view detailed weather information for various cities. The application displays a list of cities with their current temperature, weather description, and temperature range (min and max). Users can click on a city to see more detailed forecasts, including temperature trends and weather data for specific days. The project supports both Celsius and Fahrenheit temperature formats and offers a user-friendly interface with responsive design.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Features:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## City Overview: Displays a card for each city with current temperature, weather description, and temperature range.
+## Detail View: Click on a city to view detailed weather information, including temperature data for specific days.
+## Dynamic Temperature and Time Formats: Toggle between Celsius/Fahrenheit and 12/24-hour time formats.
+## Responsive Design: Adapts to different screen sizes for a seamless experience on both desktop and mobile devices.
+## Day Filtering: Allows users to filter weather information by specific days.
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Technologies Used:
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Vue.js
+## Pinia for state management
+## SCSS for styling
+## Axios for API requests
+
+## Contribution: Feel free to fork the repository and submit pull requests for improvements or bug fixes.
