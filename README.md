@@ -18,3 +18,9 @@
 ## Axios for API requests
 
 ## Contribution: Feel free to fork the repository and submit pull requests for improvements or bug fixes.
+
+![Desktop](https://github.com/user-attachments/assets/dc389299-5836-440f-acbf-79ed8a690fbc)
+
+![Details](https://github.com/user-attachments/assets/1555fe97-7b86-4ad2-89fa-06da6952eba6)
+
+![Mobile](https://github.com/user-attachments/assets/81ca6679-0810-4a62-a428-0aecff41a59f)
