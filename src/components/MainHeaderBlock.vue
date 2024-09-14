@@ -72,6 +72,9 @@ export default {
 
 @media (max-width: 768px) {
   .header {
+    .title {
+      z-index: 100;
+    }
     .search {
       margin: 10px;
       display: flex;

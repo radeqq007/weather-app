@@ -1,5 +1,6 @@
 <template>
   <main class="app">
+    <corner-git />
     <main-header-block />
     <div class="cityList">
       <city-card v-for="city in store.cities" :key="city.id" :city="city" />
@@ -11,10 +12,11 @@
 import { useStore } from "./stores/store";
 import CityCard from "./components/CityCard.vue";
 import MainHeaderBlock from "./components/MainHeaderBlock.vue";
+import CornerGit from "./components/CornerGit.vue";
 
 export default {
   name: "App",
-  components: { CityCard, MainHeaderBlock },
+  components: { CityCard, MainHeaderBlock, CornerGit },
 
   data() {
     return {
